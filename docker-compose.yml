@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  db:
+    image: postgres:alpine
+    restart: always
+    environment:
+      POSTGRES_DB: myfinanceorg
+      POSTGRES_USER: myfinanceorg
+      POSTGRES_PASSWORD: myfinanceorg
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:
